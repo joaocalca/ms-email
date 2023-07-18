@@ -26,7 +26,7 @@ public class EmailController {
     @Autowired
     private EmailService emailService;
 
-    @PostMapping("/emails")
+    @PostMapping("/sending-email")
     public ResponseEntity<EmailModel> sendingEmail(@RequestBody @Valid EmailDto emailDto) {
         return new ResponseEntity<>(emailService.sendEmail(emailDto.convertToEmailModel()), HttpStatus.CREATED);
     }
